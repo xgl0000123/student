@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+           xmlns:context="http://www.springframework.org/schema/context"
+           xmlns:tx="http://www.springframework.org/schema/tx"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+  	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.3.xsd
+ 	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+    http://code.alibabatech.com/schema/dubbo
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd ">
+
+    <import resource="classpath:applicationContext-dao.xml"></import>
+
+    <!--服务提供方应用名-->
+    <dubbo:application name="student-service" />
+    <!-- 使用zookeeper作为注册中心 -->
+    <dubbo:registry protocol="zookeeper" address="zookeeper://localhost:2181" />
+    <!--<dubbo:protocol name="dubbo" port="20880" />-->
+    <!-- 生成远程服务代理，可以和本地bean一样使用demoService
+    <dubbo:service interface="com.dubbo.api.rpc.TestService"
+                   ref="testService"></dubbo:service>-->
+    <!--dubbo扫描包-->
+    <dubbo:annotation package="org.student.service" />
+
+    <context:component-scan base-package="org.student.service" />
+</beans>

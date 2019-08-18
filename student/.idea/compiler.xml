@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="student-dao" />
+        <module name="student-interface" />
+        <module name="student-pojo" />
+        <module name="student-service" />
+        <module name="student-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="student-dao" target="1.5" />
+      <module name="student-interface" target="1.5" />
+      <module name="student-parent" target="1.5" />
+      <module name="student-pojo" target="1.5" />
+      <module name="student-service" target="1.7" />
+      <module name="student-web" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
