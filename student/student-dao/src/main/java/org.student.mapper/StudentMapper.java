@@ -2,7 +2,7 @@ package org.student.mapper;
 
 import org.springframework.stereotype.Repository;
 import org.student.entity.Student;
-//12345
+//0000
 @Repository
 public interface StudentMapper {
     Student selectByStuNo(int stuNo);
